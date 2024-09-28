@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #007BFF;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Bank Management System</h1>
+    
+    <!-- Create HTML forms for user input -->
+    <form method="POST" action="/create_account">
+        <h2>Create an Account</h2>
+        <label for="accountNo">Account No:</label>
+        <input type="text" name="accountNo" required><br>
+        <label for="accountHolderName">Account Holder Name:</label>
+        <input type="text" name="accountHolderName" required><br>
+        <label for="accountType">Account Type (C/S):</label>
+        <input type="text" name="accountType" required><br>
+        <label for="initialAmount">Initial Amount (>=500 for Saving, >=1000 for current):</label>
+        <input type="text" name="initialAmount" required><br>
+        <input type="submit" value="Create Account">
+    </form>
+
+    <!-- Deposit Form -->
+    <form method="POST" action="/deposit_withdraw">
+        <h2>Deposit</h2>
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" name="accountNumber" required><br>
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" required><br>
+        <input type="hidden" name="action" value="Deposit">
+        <input type="submit" value="Deposit">
+    </form>
+
+    <!-- Withdraw Form -->
+    <form method="POST" action="/deposit_withdraw">
+        <h2>Withdraw</h2>
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" name="accountNumber" required><br>
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" required><br>
+        <input type="hidden" name="action" value="Withdraw">
+        <input type="submit" value="Withdraw">
+    </form>
+
+    <!-- Balance Enquiry Form -->
+    <form method="POST" action="/display_specific">
+        <h2>Balance Enquiry</h2>
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" name="accountNumber" required><br>
+        <input type="submit" value="Check Balance">
+    </form>
+
+    <!-- Display all accounts -->
+    <a href="/display_all">View All Accounts</a>
+</body>
+</html>

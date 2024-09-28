@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Account Details</h1>
+    
+    <!-- Display specific account information -->
+    <ul>
+        <li><strong>Account Number:</strong> {{ account["Account Number"] }}</li>
+        <li><strong>Account Holder Name:</strong> {{ account["Account Holder Name"] }}</li>
+        <li><strong>Type of Account:</strong> {{ account["Type of Account"] }}</li>
+        <li><strong>Balance:</strong> {{ account["Balance"] }}</li>
+    </ul>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
